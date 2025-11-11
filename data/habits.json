@@ -1,0 +1,40 @@
+[
+  {
+    "id": "4247d7d9-2ad5-470b-a002-20343e02e5b8",
+    "userId": "82a68e34-a2b5-4031-9820-6bbbfcc0a8c2",
+    "name": "réveil 8 H",
+    "color": "green",
+    "dailyRecords": [
+      {
+        "date": "2025-11-11",
+        "status": "completed",
+        "completedAt": 1762900518361
+      },
+      {
+        "date": "2025-11-12",
+        "status": "pending"
+      }
+    ],
+    "createdAt": 1762900485784,
+    "updatedAt": 1762902925177
+  },
+  {
+    "id": "1fafbb57-68c5-4a0d-8b67-c4cc96422e03",
+    "userId": "82a68e34-a2b5-4031-9820-6bbbfcc0a8c2",
+    "name": "exercice pendant 5 min au réveil",
+    "color": "blue",
+    "dailyRecords": [
+      {
+        "date": "2025-11-11",
+        "status": "completed",
+        "completedAt": 1762900540730
+      },
+      {
+        "date": "2025-11-12",
+        "status": "pending"
+      }
+    ],
+    "createdAt": 1762900537450,
+    "updatedAt": 1762902925177
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "id": "82a68e34-a2b5-4031-9820-6bbbfcc0a8c2",
+    "email": "lennydecourtieux@icloud.com",
+    "passwordHash": "cb671210c19b27a04c9106d7d140ed7c:120000:2fa98d541cdcb3e60aab86a3e7be744492c8e1e0e33542eb78da85324e3530ecb4e4f2af6a4e4b10b2986033d6fa5155dbb7b42777d4bef0d3b349a922dc3044",
+    "createdAt": 1762880517298,
+    "isAdmin": true,
+    "customCategories": [],
+    "username": "lennydecourtieux"
+  },
+  {
+    "id": "05e3888a-bfdb-4f7f-8479-a90aa52790cd",
+    "email": "raphael.busnel@gmail.com",
+    "passwordHash": "6943b381480d8537b8ca58e88d3cbcca:120000:30fe9cf5f02215a4e25c3b57d44387bf0e8625612978308de77a21080de8529bc0225fc289deda40c83a1e5419c33ead9f15b068a805ee9865e92c260d58ff96",
+    "createdAt": 1762886507385,
+    "isAdmin": true,
+    "username": "raphael.busnel"
+  }
+]

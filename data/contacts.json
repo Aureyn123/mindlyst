@@ -1,0 +1,18 @@
+[
+  {
+    "id": "e7658c35-dfdf-44cb-9f1a-bb5d157c8800",
+    "userId": "82a68e34-a2b5-4031-9820-6bbbfcc0a8c2",
+    "contactUserId": "05e3888a-bfdb-4f7f-8479-a90aa52790cd",
+    "contactUsername": "raphael.busnel",
+    "contactEmail": "raphael.busnel@gmail.com",
+    "createdAt": 1762902506969
+  },
+  {
+    "id": "a9c86e96-eb55-43fc-80e2-5e8f5476304d",
+    "userId": "05e3888a-bfdb-4f7f-8479-a90aa52790cd",
+    "contactUserId": "82a68e34-a2b5-4031-9820-6bbbfcc0a8c2",
+    "contactUsername": "lennydecourtieux",
+    "contactEmail": "lennydecourtieux@icloud.com",
+    "createdAt": 1762902506969
+  }
+]
