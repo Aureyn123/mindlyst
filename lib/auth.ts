@@ -57,7 +57,9 @@ export function parseCookies(req: NextApiRequest | { headers: { cookie?: string 
 }
 
 export async function readUsers(): Promise<UserRecord[]> {
-  return readJson<UserRecord[]>(USERS_FILE, []);
+  const users = await readJson<UserRecord[]>(USERS_FILE, []);
+  console.log("USERS LOADED:", users);
+  return users;
 }
 
 export async function writeUsers(users: UserRecord[]): Promise<void> {

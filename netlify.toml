@@ -3,10 +3,6 @@
   publish = ".next"
   functions = "netlify/functions"
 
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["node-cron", "nodemailer", "stripe"]
-
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
