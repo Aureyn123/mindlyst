@@ -80,22 +80,30 @@ export function detectDatesInText(text: string): Array<{ date: Date; text: strin
     "juillet", "août", "septembre", "octobre", "novembre", "décembre"
   ];
 
-  // Pattern 1 : Format français
-  let match: RegExpExecArray | null = null;
-  const pattern1 = /(?:le\s+)?(\d{1,2})\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+(\d{4})(?:\s+à\s+(\d{1,2})h(?:(\d{2}))?)?/gi;
-  while ((match = pattern1.exec(text)) !== null) {
-    const day = parseInt(match[1]);
-    const month = monthNames.findIndex(m => m.toLowerCase() === match[2].toLowerCase());
-    const year = parseInt(match[3]);
-    const hour = match[4] ? parseInt(match[4]) : 9;
-    const minute = match[5] ? parseInt(match[5]) : 0;
+// Pattern 1 : Format français
+let match: RegExpExecArray | null = null;
+const pattern1 =
+  /(?:le\s+)?(\d{1,2})\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+(\d{4})(?:\s+à\s+(\d{1,2})h(?::(\d{2}))?)?/gi;
 
-    if (month >= 0) {
-      const date = new Date(year, month, day, hour, minute);
-      dates.push({ date, text: match[0] });
-    }
+while ((match = pattern1.exec(text)) !== null) {
+  // on fige ici pour que TS sache que c'est pas null
+  const m = match as RegExpExecArray;
+
+  const day = parseInt(m[1]);
+  const month = monthNames.findIndex(
+    (name) => name.toLowerCase() === m[2].toLowerCase()
+  );
+  const year = parseInt(m[3]);
+  const hour = m[4] ? parseInt(m[4]) : 9;
+  const minute = m[5] ? parseInt(m[5]) : 0;
+
+  if (month >= 0) {
+    dates.push({
+      date: new Date(year, month, day, hour, minute),
+      text: m[0],
+    });
   }
-
+}
   // Pattern 2 : Format DD/MM/YYYY
   const pattern2 = /(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}):(\d{2}))?/g;
   while ((match = pattern2.exec(text)) !== null) {
