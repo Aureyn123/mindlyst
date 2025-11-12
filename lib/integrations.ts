@@ -81,7 +81,7 @@ export function detectDatesInText(text: string): Array<{ date: Date; text: strin
   ];
 
   // Pattern 1 : Format français
-  let match;
+  let match: RegExpExecArray | null = null;
   const pattern1 = /(?:le\s+)?(\d{1,2})\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+(\d{4})(?:\s+à\s+(\d{1,2})h(?:(\d{2}))?)?/gi;
   while ((match = pattern1.exec(text)) !== null) {
     const day = parseInt(match[1]);
