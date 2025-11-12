@@ -27,10 +27,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const users = await readUsers();
-  const user = users.find(u => u.email === email.toLowerCase().trim());
+  if (!Array.isArray(users)) {
+    console.error("readUsers ne renvoie pas un tableau", users);
+    return res.status(500).json({ error: "Erreur interne : base utilisateurs invalide" });
+  }
 
-  if (!user || !verifyPassword(password, user.passwordHash)) {
-    return res.status(401).json({ error: "Identifiants invalides" });
+  const user = users.find((u) => u.email === email.toLowerCase().trim());
+  if (!user) {
+    return res.status(401).json({ error: "Utilisateur introuvable" });
+  }
+
+  const valid = verifyPassword(password, user.passwordHash);
+  if (!valid) {
+    return res.status(401).json({ error: "Mot de passe incorrect" });
   }
 
   const cookies = parseCookies(req);
